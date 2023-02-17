@@ -1,4 +1,4 @@
-import { Box } from '@mui/material';
+import { Box, Checkbox } from '@mui/material';
 import { React } from 'react';
 import Delete from '../Buttons/Delete';
 
@@ -7,7 +7,11 @@ const Container = (context) => {
 	const { todoList } = state;
 
 	return todoList.map((todo, key) =>
-		<Box key={ key }>
+		<Box
+			key={ key }
+			className="container"
+		>
+			<Checkbox/>
 			<Box
 				className="text"
 				onClick={ () => setState({
