@@ -23,10 +23,17 @@ const toggleIsActive = (context) => {
 	});
 };
 
+const clearAll = (context) => {
+	const { state: { todoList }} = context;
+
+	return todoList.filter((data) => data.isActive === false);
+};
+
 const TodoManager = {
 	addTodoId,
 	removeTodo,
 	toggleIsActive,
+	clearAll,
 };
 
 export default TodoManager;

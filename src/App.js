@@ -1,6 +1,7 @@
 import { React, useState } from 'react';
 import './App.scss';
 import Add from './components/Buttons/Add';
+import ClearAll from './components/Buttons/ClearAll';
 import Container from './components/Container';
 import Input from './components/Input';
 
@@ -18,6 +19,7 @@ const App = (context) => {
 			<Input { ...extendedContext }/>
 			<Add { ...extendedContext }/>
 			<Container { ...extendedContext }/>
+			<ClearAll { ...extendedContext }/>
 		</div>
 	);
 };
