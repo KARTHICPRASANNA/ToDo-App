@@ -29,11 +29,18 @@ const clearAll = (context) => {
 	return todoList.filter((data) => data.isActive === false);
 };
 
+const selectAll = (context) => {
+	const { state: { todoList }, checked } = context;
+
+	return todoList.map((todo) => ({ ...todo, isActive: checked }));
+};
+
 const TodoManager = {
 	addTodoId,
 	removeTodo,
 	toggleIsActive,
 	clearAll,
+	selectAll,
 };
 
 export default TodoManager;

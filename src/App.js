@@ -4,6 +4,7 @@ import Add from './components/Buttons/Add';
 import ClearAll from './components/Buttons/ClearAll';
 import Container from './components/Container';
 import Input from './components/Input';
+import SelectAll from './components/SelectAll';
 
 const getInitialState = () => ({
 	text: '',
@@ -18,6 +19,7 @@ const App = (context) => {
 		<div className="App">
 			<Input { ...extendedContext }/>
 			<Add { ...extendedContext }/>
+			<SelectAll { ...extendedContext }/>
 			<Container { ...extendedContext }/>
 			<ClearAll { ...extendedContext }/>
 		</div>
