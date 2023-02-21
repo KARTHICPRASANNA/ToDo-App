@@ -1,6 +1,7 @@
-import { Box, Checkbox } from '@mui/material';
+import { Box } from '@mui/material';
 import { React } from 'react';
 import Delete from '../Buttons/Delete';
+import CheckBox from '../CheckBox';
 
 const Container = (context) => {
 	const { state, setState } = context;
@@ -11,7 +12,7 @@ const Container = (context) => {
 			key={ key }
 			className="container"
 		>
-			<Checkbox/>
+			<CheckBox { ...{ ...context, data: todo } }/>
 			<Box
 				className="text"
 				onClick={ () => setState({
