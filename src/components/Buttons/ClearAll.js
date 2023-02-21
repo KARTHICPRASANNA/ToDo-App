@@ -10,6 +10,7 @@ const ClearAll = (context) => {
 			variant="contained"
 			color="error"
 			className="clearAll"
+			style={ { display: 'block' } }
 			onClick={ () => setState({
 				...state,
 				todoList: TodoManager.clearAll(context),

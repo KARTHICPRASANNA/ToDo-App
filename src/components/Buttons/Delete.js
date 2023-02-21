@@ -8,7 +8,6 @@ const Delete = (context) => {
 
 	return (
 		<Button
-			variant="contained"
 			color="error"
 			onClick={ () => setState({
 				...state,
