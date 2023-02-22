@@ -35,6 +35,13 @@ const selectAll = (context) => {
 	return todoList.map((todo) => ({ ...todo, isActive: checked }));
 };
 
+const isChecked = (context) => {
+	const { state: { todoList }} = context;
+
+	return todoList.length
+					&& todoList.every((todo) => todo.isActive);
+};
+
 const updateTodo = (context) => {
 	const { state: { text, todoList, editedTodo }} = context;
 
@@ -49,6 +56,7 @@ const TodoManager = {
 	clearAll,
 	selectAll,
 	updateTodo,
+	isChecked,
 };
 
 export default TodoManager;
