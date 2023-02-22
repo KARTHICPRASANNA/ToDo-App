@@ -4,9 +4,11 @@ import TodoManager from '../../services/TodoManager';
 
 const ClearAll = (context) => {
 	const { state, setState } = context;
+	const { todoList } = state;
 
 	return (
 		<Button
+			disabled={ !todoList.some((todo) => todo.isActive) }
 			variant="contained"
 			color="error"
 			className="clearAll"
