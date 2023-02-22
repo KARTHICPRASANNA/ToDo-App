@@ -18,6 +18,7 @@ const Container = (context) => {
 				onClick={ () => setState({
 					...state,
 					text: todo.name,
+					editedTodo: todo,
 				}) }
 			>{todo.name}</Box>
 			<Delete { ...{ ...context, data: todo } }/>

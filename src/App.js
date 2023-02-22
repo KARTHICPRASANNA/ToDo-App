@@ -1,6 +1,6 @@
 import { React, useState } from 'react';
 import './App.scss';
-import Add from './components/Buttons/Add';
+import Action from './components/Buttons/Action';
 import ClearAll from './components/Buttons/ClearAll';
 import Container from './components/Container';
 import Input from './components/Input';
@@ -9,6 +9,7 @@ import SelectAll from './components/SelectAll';
 const getInitialState = () => ({
 	text: '',
 	todoList: [],
+	editedTodo: null,
 });
 
 const App = (context) => {
@@ -18,7 +19,7 @@ const App = (context) => {
 	return (
 		<div className="App">
 			<Input { ...extendedContext }/>
-			<Add { ...extendedContext }/>
+			<Action { ...extendedContext }/>
 			<SelectAll { ...extendedContext }/>
 			<Container { ...extendedContext }/>
 			<ClearAll { ...extendedContext }/>
