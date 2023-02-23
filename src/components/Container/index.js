@@ -5,8 +5,7 @@ import Delete from '../Buttons/Delete';
 import CheckBox from '../CheckBox';
 
 const Container = (context) => {
-	const { state, setState } = context;
-	const { filter } = state;
+	const { state, setState, state: { filter }} = context;
 	const filteredTodo = TodoManager.filter[filter](context);
 
 	return filteredTodo.map((todo, key) =>
@@ -19,7 +18,8 @@ const Container = (context) => {
 				className="text"
 				onClick={ () => setState({
 					...state,
-					text: todo.name, editedTodo: todo,
+					text: todo.name,
+					editedTodo: todo,
 				}) }
 			>{todo.name}</Box>
 			<Delete { ...{ ...context, data: todo } }/>

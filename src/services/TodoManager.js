@@ -26,7 +26,7 @@ const toggleIsActive = (context) => {
 const clearAll = (context) => {
 	const { state: { todoList }} = context;
 
-	return todoList.filter((data) => data.isActive === false);
+	return todoList.filter((data) => !data.isActive);
 };
 
 const selectAll = (context) => {
@@ -51,10 +51,10 @@ const updateTodo = (context) => {
 
 const filter = {
 	all: ({ state: { todoList }}) => todoList,
-	active: ({ state: { todoList }}) => todoList.filter((todo) =>
-		!todo.isActive),
-	completed: ({ state: { todoList }}) => todoList.filter((todo) =>
-		todo.isActive),
+	active: ({ state: { todoList }}) =>
+		todoList.filter((todo) => !todo.isActive),
+	completed: ({ state: { todoList }}) =>
+		todoList.filter((todo) => todo.isActive),
 };
 
 const TodoManager = {
