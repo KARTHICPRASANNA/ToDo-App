@@ -49,6 +49,14 @@ const updateTodo = (context) => {
 		(todo.id === editedTodo.id ? { ...todo, name: text } : todo));
 };
 
+const filter = {
+	all: ({ state: { todoList }}) => todoList,
+	active: ({ state: { todoList }}) => todoList.filter((todo) =>
+		!todo.isActive),
+	completed: ({ state: { todoList }}) => todoList.filter((todo) =>
+		todo.isActive),
+};
+
 const TodoManager = {
 	addTodoId,
 	removeTodo,
@@ -57,6 +65,7 @@ const TodoManager = {
 	selectAll,
 	updateTodo,
 	isChecked,
+	filter,
 };
 
 export default TodoManager;

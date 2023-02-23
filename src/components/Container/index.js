@@ -1,13 +1,15 @@
 import { Box } from '@mui/material';
 import { React } from 'react';
+import TodoManager from '../../services/TodoManager';
 import Delete from '../Buttons/Delete';
 import CheckBox from '../CheckBox';
 
 const Container = (context) => {
 	const { state, setState } = context;
-	const { todoList } = state;
+	const { filter } = state;
+	const filteredTodo = TodoManager.filter[filter](context);
 
-	return todoList.map((todo, key) =>
+	return filteredTodo.map((todo, key) =>
 		<Box
 			key={ key }
 			className="container"
@@ -17,8 +19,7 @@ const Container = (context) => {
 				className="text"
 				onClick={ () => setState({
 					...state,
-					text: todo.name,
-					editedTodo: todo,
+					text: todo.name, editedTodo: todo,
 				}) }
 			>{todo.name}</Box>
 			<Delete { ...{ ...context, data: todo } }/>
