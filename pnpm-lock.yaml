@@ -6,6 +6,7 @@ specifiers:
   '@laufire/resist': ^0.0.5
   '@laufire/utils': ^2.9.2
   '@mui/icons-material': ^5.11.9
+  '@mui/lab': 5.0.0-alpha.120
   '@mui/material': ^5.11.9
   '@testing-library/jest-dom': ^5.14.1
   '@testing-library/react': ^11.2.7
@@ -25,6 +26,7 @@ dependencies:
   '@laufire/resist': 0.0.5
   '@laufire/utils': 2.9.2
   '@mui/icons-material': 5.11.9_o6i5p43ymjnpxb7tmdi6kldiwe
+  '@mui/lab': 5.0.0-alpha.120_7tnlw7xlfgmnt6arv4mfvsypmi
   '@mui/material': 5.11.9_mpum5pu5vxdmtbvcevx44455ti
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
@@ -2234,6 +2236,39 @@ packages:
       '@babel/runtime': 7.20.13
       '@mui/material': 5.11.9_mpum5pu5vxdmtbvcevx44455ti
       react: 17.0.2
+    dev: false
+
+  /@mui/lab/5.0.0-alpha.120_7tnlw7xlfgmnt6arv4mfvsypmi:
+    resolution: {integrity: sha512-vjlF2jTKSZnNxtUO0xxHEDfpL5cG0LLNRsfKv8TYOiPs0Q1bbqO3YfqJsqxv8yh+wx7EFZc8lwJ4NSAQdenW3A==}
+    engines: {node: '>=12.0.0'}
+    peerDependencies:
+      '@emotion/react': ^11.5.0
+      '@emotion/styled': ^11.3.0
+      '@mui/material': ^5.0.0
+      '@types/react': ^17.0.0 || ^18.0.0
+      react: ^17.0.0 || ^18.0.0
+      react-dom: ^17.0.0 || ^18.0.0
+    peerDependenciesMeta:
+      '@emotion/react':
+        optional: true
+      '@emotion/styled':
+        optional: true
+      '@types/react':
+        optional: true
+    dependencies:
+      '@babel/runtime': 7.20.13
+      '@emotion/react': 11.10.5_react@17.0.2
+      '@emotion/styled': 11.10.5_l7gftlbh7xaw66y2swwtfz6cva
+      '@mui/base': 5.0.0-alpha.118_sfoxds7t5ydpegc3knd667wn6m
+      '@mui/material': 5.11.9_mpum5pu5vxdmtbvcevx44455ti
+      '@mui/system': 5.11.9_3lsrph6se4xquylogkb5yq6ogu
+      '@mui/types': 7.2.3
+      '@mui/utils': 5.11.9_react@17.0.2
+      clsx: 1.2.1
+      prop-types: 15.8.1
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
+      react-is: 18.2.0
     dev: false
 
   /@mui/material/5.11.9_mpum5pu5vxdmtbvcevx44455ti:

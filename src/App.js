@@ -3,9 +3,8 @@ import './App.scss';
 import Input from './components/Input';
 import Action from './components/Buttons/Action';
 import SelectAll from './components/SelectAll';
-import Option from './components/Buttons/Option';
-import Container from './components/Container';
 import ClearAll from './components/Buttons/ClearAll';
+import Tabs from './components/Tabs';
 
 const getInitialState = () => ({
 	text: '',
@@ -23,8 +22,7 @@ const App = (context) => {
 			<Input { ...extendedContext }/>
 			<Action { ...extendedContext }/>
 			<SelectAll { ...extendedContext }/>
-			<Option { ...extendedContext }/>
-			<Container { ...extendedContext }/>
+			<Tabs { ...extendedContext }/>
 			<ClearAll { ...extendedContext }/>
 		</div>
 	);
