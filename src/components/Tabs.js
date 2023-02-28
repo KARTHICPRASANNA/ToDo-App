@@ -18,7 +18,9 @@ const Tabs = (context) => {
 				<Tab label="Active" value="active"/>
 				<Tab label="Completed" value="completed"/>
 			</TabList>
-			<TabPanel value={ filter }> <Container { ...context }/> </TabPanel>
+			<TabPanel value={ filter }>
+				<Container { ...context }/>
+			</TabPanel>
 		</TabContext>
 	</Box>;
 };

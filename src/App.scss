@@ -10,7 +10,8 @@
 }
 
 .text {
-	display: inline-block;
+	display: flex;
+	width: 70%;
 	font-weight: bold;
 	font-size: xx-large;
 }
@@ -28,5 +29,10 @@
 .selectAll {
 	font-weight: bold;
 	font-size: x-large;
+}
+
+.taskText {
+	font-weight: bold;
+	font-size: xx-large;
 }
 
