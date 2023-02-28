@@ -5,6 +5,8 @@ const config = {
 		'active',
 		'completed',
 	],
+	tasks: ['prasanna', 'arun', 'jeevan', 'rakesh', 'vishnu'],
+	timeInterval: 2000,
 };
 
 export default config;

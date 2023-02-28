@@ -1,4 +1,4 @@
-import { rndString } from '@laufire/utils/random';
+import { rndString, rndValue } from '@laufire/utils/random';
 
 const addTodoId = ({ state: { text }, config: { idLength }}) => ({
 	...text,
@@ -57,6 +57,39 @@ const filter = {
 		todoList.filter((todo) => todo.isActive),
 };
 
+const getTask = ({ config: { idLength }, data: task }) => ({
+	name: task,
+	id: rndString(idLength),
+});
+
+const getTaskListId = (context) => {
+	const { config: { tasks }} = context;
+
+	return tasks.map((task) => getTask({ ...context, data: task }));
+};
+
+const removeTask = (context) => {
+	const { state: { taskList }, data: task } = context;
+
+	return taskList.filter((ele) => ele.id !== task.id);
+};
+
+const autoTaskGenerator = (context) => {
+	const { setState, config: { timeInterval, tasks }} = context;
+
+	setInterval(() => setState((prevState) => {
+		const { taskList, autoTaskGenLimit } = prevState;
+
+		return {
+			...prevState,
+			taskList: taskList.length < autoTaskGenLimit
+				? [...taskList, getTask({ ...context,
+					data: rndValue(tasks) })]
+				: taskList,
+		};
+	}), timeInterval);
+};
+
 const TodoManager = {
 	addTodoId,
 	removeTodo,
@@ -65,6 +98,9 @@ const TodoManager = {
 	selectAll,
 	updateTodo,
 	isChecked,
+	getTaskListId,
+	removeTask,
+	autoTaskGenerator,
 	filter,
 };
 
