@@ -5,7 +5,13 @@ const config = {
 		'active',
 		'completed',
 	],
-	tasks: ['prasanna', 'arun', 'jeevan', 'rakesh', 'vishnu'],
+	tasks: [
+		'HTML',
+		'CSS',
+		'Javascript',
+		'React.js',
+		'Node.js',
+	],
 	timeInterval: 2000,
 };
 

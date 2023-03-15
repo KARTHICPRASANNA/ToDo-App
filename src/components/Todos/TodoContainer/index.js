@@ -1,14 +1,15 @@
 import { TabContext, TabList, TabPanel } from '@mui/lab';
 import { Box, Tab } from '@mui/material';
 import { React } from 'react';
-import Container from './Container';
+import Display from './Display';
 
-const Tabs = (context) => {
+const Container = (context) => {
 	const { state, setState, state: { filter }} = context;
 
 	return <Box>
 		<TabContext value={ filter }>
 			<TabList
+				centered={ true }
 				onChange={ (event, value) => setState({
 					...state,
 					filter: value,
@@ -18,11 +19,9 @@ const Tabs = (context) => {
 				<Tab label="Active" value="active"/>
 				<Tab label="Completed" value="completed"/>
 			</TabList>
-			<TabPanel value={ filter }>
-				<Container { ...context }/>
-			</TabPanel>
+			<TabPanel value={ filter }><Display { ...context }/></TabPanel>
 		</TabContext>
 	</Box>;
 };
 
-export default Tabs;
+export default Container;

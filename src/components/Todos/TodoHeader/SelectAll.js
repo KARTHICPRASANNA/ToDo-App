@@ -1,6 +1,6 @@
 import { Box, Checkbox } from '@mui/material';
 import { React } from 'react';
-import TodoManager from '../services/TodoManager';
+import TodoManager from '../../../services/TodoManager';
 
 const SelectAll = (context) => {
 	const { state, setState } = context;
@@ -16,7 +16,7 @@ const SelectAll = (context) => {
 					todoList: TodoManager.selectAll({ ...context, checked }),
 				}) }
 			/>
-			SelectAll
+			SELECTAll
 		</Box>
 
 	);

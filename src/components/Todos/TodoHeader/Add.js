@@ -1,6 +1,7 @@
 import { Button } from '@mui/material';
 import { React } from 'react';
-import TodoManager from '../../services/TodoManager';
+import TodoManager from '../../../services/TodoManager';
+import AddTaskIcon from '@mui/icons-material/AddTask';
 
 const Add = (context) => {
 	const { state, setState } = context;
@@ -16,7 +17,7 @@ const Add = (context) => {
 				text: '',
 			}) }
 		>
-			Add
+			<AddTaskIcon/>
 		</Button>
 	);
 };

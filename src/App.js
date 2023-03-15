@@ -1,13 +1,9 @@
 import './App.scss';
 import { React, useState } from 'react';
 import { Box } from '@mui/material';
-import Input from './components/Input';
-import Action from './components/Buttons/Action';
-import SelectAll from './components/SelectAll';
-import ClearAll from './components/Buttons/ClearAll';
-import Tabs from './components/Tabs';
-import TaskContainer from './components/TaskContainer';
 import TodoManager from './services/TodoManager';
+import TodoList from './components/Todos';
+import Tasks from './components/Tasks';
 
 const getInitialState = () => ({
 	text: '',
@@ -15,7 +11,7 @@ const getInitialState = () => ({
 	editedTodo: null,
 	filter: 'all',
 	taskList: [],
-	autoTaskGenLimit: 5,
+	autoTaskGenLimit: 10,
 });
 
 const App = (context) => {
@@ -27,12 +23,8 @@ const App = (context) => {
 
 	return (
 		<Box className="App">
-			<Input { ...extendedContext }/>
-			<Action { ...extendedContext }/>
-			<SelectAll { ...extendedContext }/>
-			<Tabs { ...extendedContext }/>
-			<ClearAll { ...extendedContext }/>
-			<TaskContainer { ...extendedContext }/>
+			<TodoList { ...extendedContext }/>
+			<Tasks { ...extendedContext }/>
 		</Box>
 	);
 };

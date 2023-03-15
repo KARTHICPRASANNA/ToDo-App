@@ -6,6 +6,7 @@ const Input = (context) => {
 
 	return (
 		<TextField
+			class="input"
 			type="text"
 			placeholder="search"
 			value={ text }

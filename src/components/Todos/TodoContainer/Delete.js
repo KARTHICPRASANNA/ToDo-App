@@ -1,7 +1,7 @@
 import { Button } from '@mui/material';
 import { React } from 'react';
-import TodoManager from '../../services/TodoManager';
-import DeleteIcon from '@mui/icons-material/Delete';
+import TodoManager from '../../../services/TodoManager';
+import BackspaceIcon from '@mui/icons-material/Backspace';
 
 const Delete = (context) => {
 	const { state, setState } = context;
@@ -14,7 +14,7 @@ const Delete = (context) => {
 				todoList: TodoManager.removeTodo(context),
 			}) }
 		>
-			<DeleteIcon/>
+			<BackspaceIcon/>
 		</Button>
 	);
 };
