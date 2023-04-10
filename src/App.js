@@ -1,23 +1,17 @@
 import './App.scss';
 import { React, useState } from 'react';
-import { Box } from '@mui/material';
+import { Box, Button } from '@mui/material';
 import TodoManager from './services/TodoManager';
 import TodoList from './components/Todos';
 import Tasks from './components/Tasks';
-
-const getInitialState = () => ({
-	text: '',
-	todoList: [],
-	editedTodo: null,
-	filter: 'all',
-	taskList: [],
-	autoTaskGenLimit: 10,
-});
+import { peek } from '@laufire/utils/debug';
 
 const App = (context) => {
-	const { once } = context;
-	const [state, setState] = useState(getInitialState(context));
+	const { once, seed, seedOne } = context;
+	const [state, setState] = useState(seed);
 	const extendedContext = { ...context, state, setState };
+
+	peek(extendedContext);
 
 	once(() => TodoManager.autoTaskGenerator(extendedContext));
 
@@ -25,6 +19,9 @@ const App = (context) => {
 		<Box className="App">
 			<TodoList { ...extendedContext }/>
 			<Tasks { ...extendedContext }/>
+			<Button
+				onClick={ () => setState(seedOne) }
+			>reset</Button>
 		</Box>
 	);
 };

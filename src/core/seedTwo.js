@@ -1,5 +1,5 @@
-const seed = {
-	text: 'prasanna',
+const seedTwo = {
+	text: '',
 	todoList: [],
 	editedTodo: null,
 	filter: 'all',
@@ -7,4 +7,4 @@ const seed = {
 	autoTaskGenLimit: 10,
 };
 
-export default seed;
+export default seedTwo;
